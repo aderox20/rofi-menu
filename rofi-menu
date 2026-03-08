@@ -72,7 +72,7 @@ case "$choice" in
     $TERMINAL -e sh -c "fastfetch -l gentoo; read -n 1 -s -r -p 'Press any key to exit...'"
     ;;
   "  Custom ASCII File")
-    ascii_file=$(rofi -dmenu -i -p "ASCII file path (future directory)")
+    ascii_file=$(rofi -dmenu -i -p "ASCII file path (add your custom path to ts)")
     [ -f "$ascii_file" ] && $TERMINAL -e sh -c "fastfetch -i $ascii_file; read -n 1 -s -r -p 'Press any key to exit...'"
     ;;
   esac
