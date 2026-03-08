@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# Detect session
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+  TERMINAL="foot"
+  LOCK="swaylock"
+  LOGOUT="swaymsg exit"
+else
+  TERMINAL="alacritty"
+  LOCK="xflock4"
+  LOGOUT="xfce4-session-logout"
+fi
+
+# Main menu
+choice=$(printf "  Terminal
+  Files
+󰀻  Applications
+  Fastfetch
+  System
+  Audio
+  Network
+  Power" | rofi -dmenu -i -p "Menu")
+
+case "$choice" in
+"  Terminal")
+  $TERMINAL
+  ;;
+
+"  Files")
+  nautilus
+  ;;
+
+"󰀻  Applications")
+  rofi -show drun -show-icons
+  ;;
+
+"  Fastfetch")
+  if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    foot -e sh -c "fastfetch; read -n 1 -s -r -p 'Press any key to exit...'"
+  else
+    alacritty -e sh -c "fastfetch; read -n 1 -s -r -p 'Press any key to exit...'"
+  fi
+  ;;
+
+"  System")
+  sub=$(printf "  Bluetooth
+  Settings
+  System Monitor" | rofi -dmenu -i -p "System")
+  case "$sub" in
+  "  Bluetooth") blueman-manager ;;
+  "  Settings") xfce4-settings-manager ;;
+  "  System Monitor") xfce4-taskmanager ;;
+  esac
+  ;;
+
+"  Audio")
+  sub=$(printf "  Volume Control
+  Microphone" | rofi -dmenu -i -p "Audio")
+  case "$sub" in
+  "  Volume Control") pavucontrol ;;
+  "  Microphone") pavucontrol ;;
+  esac
+  ;;
+
+"  Network")
+  nm-connection-editor
+  ;;
+
+"  Power")
+  sub=$(printf "  Lock
+  Logout
+  Reboot
+  Shutdown" | rofi -dmenu -i -p "Power")
+  case "$sub" in
+  "  Lock") $LOCK ;;
+  "  Logout") $LOGOUT ;;
+  "  Reboot") systemctl reboot ;;
+  "  Shutdown") systemctl poweroff ;;
+  esac
+  ;;
+esac
