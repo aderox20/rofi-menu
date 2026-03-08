@@ -35,8 +35,9 @@ case "$choice" in
   ;;
 
 "  Fastfetch")
-  # Fastfetch submenu with corrected Nerd Font icons
-  ff_choice=$(printf "󰣇  Arch Linux
+  # Fastfetch submenu with Default first
+  ff_choice=$(printf "  Default
+󰣇  Arch Linux
   Ubuntu
   Debian
   Fedora
@@ -44,10 +45,14 @@ case "$choice" in
   Pop!_OS
   openSUSE
   Gentoo
+  Linux Mint
   Custom ASCII File" | rofi -dmenu -i -p "Fastfetch")
 
   case "$ff_choice" in
-  "  Arch Linux" | "")
+  "  Default")
+    $TERMINAL -e sh -c "fastfetch; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "󰣇  Arch Linux" | "")
     $TERMINAL -e sh -c "fastfetch -l arch; read -n 1 -s -r -p 'Press any key to exit...'"
     ;;
   "  Ubuntu")
@@ -70,6 +75,9 @@ case "$choice" in
     ;;
   "  Gentoo")
     $TERMINAL -e sh -c "fastfetch -l gentoo; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Linux Mint")
+    $TERMINAL -e sh -c "fastfetch -l linuxmint; read -n 1 -s -r -p 'Press any key to exit...'"
     ;;
   "  Custom ASCII File")
     ascii_file=$(rofi -dmenu -i -p "ASCII file path (add your custom path to ts)")
