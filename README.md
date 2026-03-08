@@ -1,4 +1,4 @@
-# Rofi Menu Dotfiles
+# Rofi Menu 
 
 Custom Rofi menu for XFCE and Sway, with Fastfetch, Nerd Font icons, and additional system tools.
 
