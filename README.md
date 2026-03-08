@@ -59,4 +59,3 @@ chmod +x ~/.config/rofi-menu/rofi-menu
 
 - Works on **XFCE** (uses Alacritty) and **Sway** (uses Foot) automatically.  
 - Uses **Nerd Fonts** for icons; make sure your font supports them.  
-- Fastfetch submenu has **Default, popu
