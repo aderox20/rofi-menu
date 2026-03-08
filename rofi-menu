@@ -35,11 +35,47 @@ case "$choice" in
   ;;
 
 "  Fastfetch")
-  if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    foot -e sh -c "fastfetch; read -n 1 -s -r -p 'Press any key to exit...'"
-  else
-    alacritty -e sh -c "fastfetch; read -n 1 -s -r -p 'Press any key to exit...'"
-  fi
+  # Fastfetch submenu with corrected Nerd Font icons
+  ff_choice=$(printf "󰣇  Arch Linux
+  Ubuntu
+  Debian
+  Fedora
+  Manjaro
+  Pop!_OS
+  openSUSE
+  Gentoo
+  Custom ASCII File" | rofi -dmenu -i -p "Fastfetch")
+
+  case "$ff_choice" in
+  "  Arch Linux" | "")
+    $TERMINAL -e sh -c "fastfetch -l arch; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Ubuntu")
+    $TERMINAL -e sh -c "fastfetch -l ubuntu; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Debian")
+    $TERMINAL -e sh -c "fastfetch -l debian; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Fedora")
+    $TERMINAL -e sh -c "fastfetch -l fedora; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Manjaro")
+    $TERMINAL -e sh -c "fastfetch -l manjaro; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Pop!_OS")
+    $TERMINAL -e sh -c "fastfetch -l pop; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  openSUSE")
+    $TERMINAL -e sh -c "fastfetch -l opensuse; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Gentoo")
+    $TERMINAL -e sh -c "fastfetch -l gentoo; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  "  Custom ASCII File")
+    ascii_file=$(rofi -dmenu -i -p "ASCII file path (future directory)")
+    [ -f "$ascii_file" ] && $TERMINAL -e sh -c "fastfetch -i $ascii_file; read -n 1 -s -r -p 'Press any key to exit...'"
+    ;;
+  esac
   ;;
 
 "  System")
