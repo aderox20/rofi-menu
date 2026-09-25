@@ -16,7 +16,7 @@ sudo apt install rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce
 
 **Arch-based**
 ```bash
-sudo pacman -Syu rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce4-settings-manager xfce4-taskmanager networkmanager
+sudo pacman -Sy rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce4-settings-manager xfce4-taskmanager networkmanager
 ```
 
 > Copy and paste the commands in your terminal to install everything needed.
