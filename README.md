@@ -42,7 +42,7 @@ chmod +x ~/.config/rofi-menu/rofi-menu
 ~/.config/rofi-menu/rofi-menu
 
 ```
-4. (optional) Put it on path:
+4. (optional) Put it on $PATH:
 ```bash
 export PATH="$HOME/.config/rofi-menu:$PATH"
 ```
