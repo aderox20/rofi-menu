@@ -1,6 +1,6 @@
 # Rofi Menu 
 
-Custom Rofi menu for XFCE and Sway, with Fastfetch, Nerd Font icons, and additional system tools.
+Custom Rofi menu for XFCE and Sway, Nerd Font icons, and additional system tools.
 
 ---
 
@@ -8,31 +8,18 @@ Custom Rofi menu for XFCE and Sway, with Fastfetch, Nerd Font icons, and additio
 
 These are the packages required to run the Rofi menu and its features.
 
-**Debian / Ubuntu / Pop!_OS**
+**Debian-based / Ubuntu / Pop!_OS**
 ```bash
 sudo apt update
 sudo apt install rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce4-settings-manager xfce4-taskmanager network-manager-gnome
 ```
 
-**Arch / Manjaro**
+**Arch-based**
 ```bash
 sudo pacman -Syu rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce4-settings-manager xfce4-taskmanager networkmanager
 ```
 
 > Copy and paste the commands in your terminal to install everything needed.
-
----
-
-## Features
-
-- **Terminal shortcut** (``)  
-- **File manager** (``)  
-- **Applications launcher** (`󰀻`)  
-- **Fastfetch menu** (``) with distro-specific options and custom ASCII  
-- **System tools** (``)  
-- **Audio controls** (``)  
-- **Network manager** (``)  
-- **Power menu** (``)  
 
 ---
 
