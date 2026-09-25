@@ -16,10 +16,11 @@ sudo apt install rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce
 
 **Arch-based**
 ```bash
-sudo pacman -Sy rofi rofi-wayland alacritty foot fastfetch nautilus pavucontrol blueman xfce4-settings-manager xfce4-taskmanager networkmanager
+sudo pacman -Sy rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce4-settings-manager xfce4-taskmanager networkmanager
 ```
 
 > Copy and paste the commands in your terminal to install everything needed.
+> If you're going to set up sway/any wayland DE/WM update rofi because older rofi versions do not support wayland and you would need to update rofi || install rofi-wayland
 
 ---
 
