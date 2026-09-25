@@ -20,6 +20,7 @@ sudo pacman -Sy rofi alacritty foot fastfetch nautilus pavucontrol blueman xfce4
 ```
 
 > Copy and paste the commands in your terminal to install everything needed.
+
 > If you're going to set up sway/any wayland DE/WM update rofi because older rofi versions do not support wayland and you would need to update rofi || install rofi-wayland
 
 ---
